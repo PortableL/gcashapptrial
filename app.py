@@ -26,7 +26,7 @@ def cashin():
             return redirect(url_for('home'))
         except:
             return "Invalid input", 400
-    return render_template('CashIn.html')
+    return render_template('Cashin.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
