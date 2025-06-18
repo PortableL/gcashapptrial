@@ -1,3 +1,4 @@
+// Tabs functionality
 const tabButtons = document.querySelectorAll(".tab");
 const tabContents = {
   0: document.getElementById("wallet-content"),
@@ -27,3 +28,25 @@ tabButtons.forEach((tab, index) => {
     if (activeContent) activeContent.classList.remove("hidden");
   });
 });
+
+// Toggle savings visibility
+const toggleButton = document.getElementById("toggle-savings");
+const savingsAmount = document.getElementById("savings-amount");
+const eyeOpenIcon = document.getElementById("eye-open-icon");
+const eyeClosedIcon = document.getElementById("eye-closed-icon");
+
+if (toggleButton && savingsAmount && eyeOpenIcon && eyeClosedIcon) {
+  toggleButton.addEventListener("click", () => {
+    const isHidden = savingsAmount.textContent.includes("*");
+
+    if (isHidden) {
+      savingsAmount.textContent = "250,000.00"; // Replace with dynamic value if needed
+      eyeOpenIcon.classList.add("hidden");
+      eyeClosedIcon.classList.remove("hidden");
+    } else {
+      savingsAmount.textContent = "*********";
+      eyeOpenIcon.classList.remove("hidden");
+      eyeClosedIcon.classList.add("hidden");
+    }
+  });
+}

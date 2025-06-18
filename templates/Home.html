@@ -1,140 +1,90 @@
-  <html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <title>CJM UI</title>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
-        rel="stylesheet"
-      />
-      <style>
-        body {
-          font-family: "Inter", sans-serif;
-        }
-      </style>
-      
-    
-    </head>
-    <body class="bg-[#e6f0ff] min-h-screen flex flex-col">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>GcashTrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#e6f0ff] min-h-screen flex flex-col">
+    <div
+      class="h-screen w-full max-w-md mx-auto border border-gray-300 rpounded-3xl shadow-lg flex flex-col justify-between"
+    >
       <div
-        class="h-screen w-full max-w-md mx-auto border border-gray-300 rpounded-3xl shadow-lg flex flex-col justify-between"
+        class="px-4 pt-6 pb-4 relative max-w-md mx-auto w-full overflow-y-auto:hidden"
       >
-        <div
-          class="px-4 pt-6 pb-4 relative max-w-md mx-auto w-full overflow-y-auto:hidden"
-        >
-          <!-- Top bar with logo, Hello!, Summer Deals, Help -->
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center space-x-1">
-              <img
-                alt="GCash logo blue circle with letter G and signal waves"
-                class="w-8 h-8"
-                height="32"
-                src="https://storage.googleapis.com/a1aa/image/bc7ab97a-de1a-49f4-e6fe-72a7b428943c.jpg"
-                width="32"
-              />
-              <span class="text-[#0a2e79] font-semibold text-lg select-none">
-                Hello!
-              </span>
-            </div>
-            <div class="flex items-center space-x-2">
-              <button
-                class="bg-[#f89f1b] text-white text-xs font-semibold rounded-full px-4 py-1 select-none"
-                type="button"
-              >
-                Tap for
-                <br />
-                Summer Deals
-              </button>
-              <button
-                class="bg-[#0052ff] text-white text-xs font-semibold rounded-full px-4 py-1 select-none"
-                type="button"
-              >
-                HELP
-              </button>
-            </div>
+        <!-- Top bar with logo, Hello!, Summer Deals, Help -->
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center space-x-1">
+            <img
+              alt="GCash logo blue circle with letter G and signal waves"
+              class="w-8 h-8"
+              height="32"
+              src="https://storage.googleapis.com/a1aa/image/bc7ab97a-de1a-49f4-e6fe-72a7b428943c.jpg"
+              width="32"
+            />
+            <span class="text-[#0a2e79] font-semibold text-lg select-none">
+              Hello!
+            </span>
           </div>
-          <!-- Wallet tabs -->
-          <div class="tabs bg-white rounded-t-xl shadow-md">
-            <!-- Tab buttons -->
-            <div
-              class="flex gap-x-1 border-gray-200 text-sm font-semibold text-[#0a2e79]"
+          <div class="flex items-center space-x-2">
+            <button
+              class="bg-[#f89f1b] text-white text-xs font-semibold rounded-full px-4 py-1 select-none"
+              type="button"
             >
-              <button
-                class="tab flex-1 border-r border-gray-300 bg-[#0052ff] text-white py-2 rounded-t-xl select-none"
-              >
-                Wallet
-              </button>
-              <button
-                class="tab flex-1 py-2 border-r border-gray-300 select-none"
-              >
-                Save
-              </button>
-              <button
-                class="tab flex-1 py-2 border-r border-gray-300 select-none"
-              >
-                Borrow
-              </button>
-              <button
-                class="tab flex-1 py-2 border-r border-gray-300 select-none"
-              >
-                Grow
-              </button>
-            </div>
-            <!-- Wallet balance and cash in --><!--Wallet Content-->
-            <div id="wallet-content" class="">
-              <div
-                class="bg-[#0052ff] text-white px-5 py-4 flex justify-between items-center rounded-b-xl"
-              >
-                <div>
-                  <div
-                    class="tab-content uppercase text-xs opacity-60 tracking-widest select-none flex items-center space-x-1"
-                  >
-                    <span> Available Balance </span>
-                    <svg
-                      class="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      viewbox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                      <path
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="mt-1 flex items-center space-x-1 font-semibold text-3xl select-none"
-                  >
-                    <span class="text-3xl font-extrabold"> ₱ </span>
-                    <span> {{ '%.2f' | format(balance) }} </span>
-                  </div>
-                </div>
-                <button
-                  class="bg-white text-[#0052ff] text-sm font-semibold rounded-full px-4 py-1 select-none"
-                  type="button"
-                >
-                  <a href="{{ url_for('cashin_options') }}" class="bg-white text-[#0052ff] text-sm font-semibold rounded-full px-4 py-1 select-none">
-                     + Cash In
-                </a>
-                </button>
-              </div>
-            </div>
-          
-          <!-- Save Content -->
-           <div id="save-content" class="hidden">
+              Tap for
+              <br />
+              Summer Deals
+            </button>
+            <button
+              class="bg-[#0052ff] text-white text-xs font-semibold rounded-full px-4 py-1 select-none"
+              type="button"
+            >
+              HELP
+            </button>
+          </div>
+        </div>
+        <!-- Wallet tabs -->
+        <div class="tabs bg-white rounded-t-xl shadow-md">
+          <!-- Tab buttons -->
+          <div
+            class="flex gap-x-1 border-gray-200 text-sm font-semibold text-[#0a2e79]"
+          >
+            <button
+              class="tab flex-1 border-r border-gray-300 bg-[#0052ff] text-white py-2 rounded-t-xl select-none"
+            >
+              Wallet
+            </button>
+            <button
+              class="tab flex-1 py-2 border-r border-gray-300 select-none"
+            >
+              Save
+            </button>
+            <button
+              class="tab flex-1 py-2 border-r border-gray-300 select-none"
+            >
+              Borrow
+            </button>
+            <button
+              class="tab flex-1 py-2 border-r border-gray-300 select-none"
+            >
+              Grow
+            </button>
+          </div>
+          <!-- Wallet balance and cash in --><!--Wallet Content-->
+          <div id="wallet-content" class="">
             <div
               class="bg-[#0052ff] text-white px-5 py-4 flex justify-between items-center rounded-b-xl"
             >
@@ -142,7 +92,7 @@
                 <div
                   class="tab-content uppercase text-xs opacity-60 tracking-widest select-none flex items-center space-x-1"
                 >
-                  <span> Current Savings </span>
+                  <span> Available Balance </span>
                   <svg
                     class="h-4 w-4"
                     fill="none"
@@ -167,19 +117,107 @@
                   class="mt-1 flex items-center space-x-1 font-semibold text-3xl select-none"
                 >
                   <span class="text-3xl font-extrabold"> ₱ </span>
-                  <span> ****** </span>
+                  <span> {{ '%.2f' | format(balance) }} </span>
                 </div>
               </div>
+              <div class="mt-4">
+                <button class="px-2.5 py-1 select-none" type="button">
+                  <a
+                    href="{{ url_for('cashin_options') }}"
+                    class="inline-block bg-sky-200 text-[#0052ff] text-sm font-semibold rounded-full px-[12px] py-[3px] select-none border border-[#0052ff]"
+                  >
+                    + Cash In
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save Content -->
+          <div id="save-content" class="hidden">
+            <div
+              class="bg-[#0052ff] text-white px-5 py-4 flex justify-between items-center rounded-b-xl"
+            >
+              <div>
+                <div
+                  class="uppercase text-xs opacity-60 tracking-widest select-none flex items-center space-x-1"
+                >
+                  <span> Current Savings </span>
+
+                  <!-- Toggle Button with SVG -->
+                  <button id="toggle-savings" class="focus:outline-none">
+                    <!-- default eye icon -->
+                    <svg
+                      id="eye-open-icon"
+                      class="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7
+                    -1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <!-- Hidden (eye-closed) icon -->
+                    <svg
+                      id="eye-closed-icon"
+                      class="h-4 w-4 hidden"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.94 17.94A10.94 10.94 0 0 1 12 20C7 20 2.73 16.11 1 12
+                          c.73-1.73 1.9-3.29 3.33-4.47"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.58 10.58A2 2 0 0 0 12 14a2 2 0 0 0 1.42-3.42"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M4.22 4.22 19.78 19.78"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Balance Display -->
+                <div
+                  class="mt-1 flex items-center space-x-1 font-semibold text-3xl select-none"
+                >
+                  <span class="text-2xl font-extrabold">₱</span>
+                  <span id="savings-amount" class="text-[25px]">*********</span>
+                </div>
+              </div>
+
               <button
                 class="bg-white text-[#0052ff] text-sm font-semibold rounded-md px-4 py-1 select-none"
                 type="button"
               >
-                <span>SAVE NOW!</span>
+                Save Now!
               </button>
             </div>
           </div>
           <!--Borrow content-->
-           <div id="borrow-content" class="hidden">
+          <div id="borrow-content" class="hidden">
             <div
               class="bg-[#0052ff] text-white px-5 py-4 flex justify-between items-center rounded-b-xl"
             >
@@ -187,17 +225,16 @@
                 <div
                   class="tab-content uppercase text-xs opacity-60 tracking-widest select-none flex items-center space-x-1"
                 >
-                    <path
-                      d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
-                  </svg>
+                  <path
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
                 </div>
                 <div
-                  class="mt-1 flex items-center space-x-1 font-semibold text-1xl select-none"
+                  class="mt-1 flex items-center space-x-2 font-semibold text-s select-none"
                 >
-                  <span> Kupal kaba? Borrow na </span>
+                  <span> Short sa buget? Borrow na </span>
                 </div>
               </div>
               <button
@@ -505,7 +542,7 @@
           <span class="text-xs mt-1">Profile</span>
         </button>
       </nav>
-      </div>
-   <script src="/static/script.js"></script>
+    </div>
+    <script src="/static/script.js"></script>
   </body>
 </html>
